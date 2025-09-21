@@ -1,69 +1,48 @@
-# React + TypeScript + Vite
+# Banco App Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is the frontend for the Banco App, developed with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Installation and Startup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To get the project up and running, follow these steps:
 
-## Expanding the ESLint configuration
+1.  **Prerequisites:** Make sure you have [pnpm](https://pnpm.io/installation) installed.
+2.  **Install dependencies:**
+    ```bash
+    pnpm install
+    ```
+3.  **Run the development server:**
+    ```bash
+    pnpm run dev
+    ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The application will be available at `http://localhost:5173` (or another port if 5173 is busy).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Available Scripts
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+-   `pnpm run dev`: Starts the development server.
+-   `pnpm run build`: Compiles the project for production.
+-   `pnpm run lint`: Runs the linter to check for code quality.
+-   `pnpm run preview`: Serves the production build locally for preview.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Folder Structure
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The project follows a specific folder structure to maintain organization and scalability. When adding new files, please adhere to the following guidelines:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-   `src/assets`: For static assets like images, fonts, etc.
+-   `src/components`: For reusable React components. Each component should have its own folder containing the component file (`.tsx`) and its corresponding stylesheet (`.css`).
+    ```
+    /components
+    └── /ComponentName
+        ├── ComponentName.tsx
+        └── ComponentName.css
+    ```
+-   `src/hooks`: For custom React hooks.
+-   `src/layouts`: For component layouts that define the structure of a page (e.g., `MainLayout`, `AuthLayout`).
+-   `src/lib`: For external libraries or utility functions that are not specific to the application's business logic.
+-   `src/pages`: For the main pages of the application. Each page may have its own folder if it's complex.
+-   `src/routes`: For route definitions and configuration.
+-   `src/services`: For services that interact with external APIs.
+-   `src/stores`: For state management stores (Zustand).
+-   `src/types`: For TypeScript type and interface definitions.
+-   `src/utils`: For utility functions specific to the application's business logic.
