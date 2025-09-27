@@ -1,0 +1,16 @@
+
+//contrato envio
+{
+    "id": 1,
+    "date": "24 Sep 2024",
+    "description": "Transferencia recibida de Maria Gonzalez",
+    "amount": 500000,
+    "cuentadestino": "12345678",
+    "cuentaorigen": "87654321"
+}
+
+// contrato respuesta recepcion
+{
+    "status": "complete",
+
+}

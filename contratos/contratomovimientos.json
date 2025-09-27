@@ -1,0 +1,39 @@
+{
+    "historial": {
+        "current page": 1,
+        "total pages": 1,
+        "total results": 1,
+        "results per page": 1,
+        "movimientos": [
+        {
+            "id": 1,
+            "date": "24 Sep 2024",
+            "description": "Transferencia recibida de Maria Gonzalez",
+            "amount": 500000,
+            "type": "income"
+        },
+        {
+            "id": 2,
+            "date": "22 Sep 2024",
+            "description": "Retiro ATM Zona Rosa",
+            "amount": -200000,
+            "type": "expense"
+        },
+        {
+            "id": 3,
+            "date": "20 Sep 2024",
+            "description": "Consignacion sucursal",
+            "amount": 800000
+        },
+        {
+            "id": 4,
+            "date": "18 Sep 2024",
+            "description": "Transferencia a Juan Perez",
+            "amount": -300000,
+            "type": "expense"
+        }
+    ]
+    },
+    "ingresos": 500000,
+    "egresos": 300000
+}

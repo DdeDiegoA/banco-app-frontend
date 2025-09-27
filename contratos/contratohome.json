@@ -1,0 +1,53 @@
+{
+    "usuario": {
+        "name": "user",
+        "email": "user",
+        "iniciales":"JD"
+    } ,
+    "cuentas": [
+        {
+            "id": "1",
+            "name": "Cuenta 1",
+            "saldo": "1000",
+            "tipo": "ahorros"
+        },
+        {
+            "id": "2",
+            "name": "Cuenta 2",
+            "saldo": "2000",
+            "tipo": "corriente"  
+        },
+        {
+            "id": "3",
+            "name": "Cuenta 3",
+            "saldo": "3000",
+            "tipo": "TC"  
+        }
+    ],
+    "movimientos": [
+        {
+            "id": "1",
+            "cuenta": "1",
+            "monto": "100",
+            "fecha": "2021-01-01",
+            "descripcion": "transferencia recibida",
+            "type": "income"
+        },
+        {
+            "id": "2",
+            "cuenta": "2",
+            "monto": "200",
+            "fecha": "2021-02-01",
+            "descripcion": "Pago Servicios Públicos",
+            "type": "expense"
+        },
+        {
+            "id": "3",
+            "cuenta": "3",
+            "monto": "300",
+            "fecha": "2021-03-01",
+            "descripcion": "compra Supermercado",
+            "type": "expense"
+        }
+    ] 
+}

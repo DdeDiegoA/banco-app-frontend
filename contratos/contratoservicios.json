@@ -1,0 +1,34 @@
+{
+    "servicios": [
+    {
+        "name": "emcali",
+        "id": "12345678"
+        
+    },
+    {
+        "name": "playstation",
+        "id": "12345678"
+        
+    },
+    {
+        "name": "pricesmart",
+        "id": "12345678"
+        
+    },
+    {
+        "name": "netflix",
+        "id": "12345678"
+        
+    },
+    {
+        "name": "hbomax",
+        "id": "12345678"
+        
+    },
+    {
+        "name": "gdo",
+        "id": "12345678"
+        
+    }
+    ]
+}
