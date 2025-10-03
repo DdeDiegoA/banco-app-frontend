@@ -1,10 +1,10 @@
 import {
     createBrowserRouter,
-    Outlet,
     type RouteObject,
 } from "react-router-dom";
 import { publicRoutes } from "./public.routes";
 import { privateRoutes } from "./private.routes";
+import HomePage from "../pages/HomePage/HomePage";
 
 const children: RouteObject[] = [...publicRoutes, ...privateRoutes];
 
@@ -12,9 +12,8 @@ export const router = createBrowserRouter([
     {
         path: "/",
         element: (
-            <div>
-                Home <Outlet />{" "}
-            </div>
+           <HomePage/>
+           
         ),
         children,
     },

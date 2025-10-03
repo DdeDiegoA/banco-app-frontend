@@ -1,0 +1,268 @@
+/* ====================================
+   VARIABLES CSS
+   ==================================== */
+:root {
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: #2D3436;
+  --card: #ffffff;
+  --card-foreground: #2D3436;
+  --popover: #ffffff;
+  --popover-foreground: #2D3436;
+  --primary: #003366;
+  --primary-foreground: #ffffff;
+  --secondary: #00B894;
+  --secondary-foreground: #ffffff;
+  --muted: #F5F6FA;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #2D3436;
+  --destructive: #D63031;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Colores adicionales */
+  --color-white: #ffffff;
+  --text-dark: #4a5565;
+  --text-primary-alt: #003366;
+  --text-gray: #6a7282;
+  --text-white-90: color-mix(in oklab, var(--color-white) 90%, transparent);
+  --text-white-80: color-mix(in oklab, var(--color-white) 80%, transparent);
+}
+
+/* ====================================
+   CLASES DE FONDO (BACKGROUND)
+   ==================================== */
+.bg-custom-background { background-color: var(--background) !important; }
+.bg-custom-foreground { background-color: var(--foreground) !important; }
+.bg-custom-card { background-color: var(--card) !important; }
+.bg-custom-card-foreground { background-color: var(--card-foreground) !important; }
+.bg-custom-popover { background-color: var(--popover) !important; }
+.bg-custom-popover-foreground { background-color: var(--popover-foreground) !important; }
+.bg-custom-primary { background-color: var(--primary) !important; }
+.bg-custom-primary-foreground { background-color: var(--primary-foreground) !important; }
+.bg-custom-secondary { background-color: var(--secondary) !important; }
+.bg-custom-secondary-foreground { background-color: var(--secondary-foreground) !important; }
+.bg-custom-muted { background-color: var(--muted) !important; }
+.bg-custom-muted-foreground { background-color: var(--muted-foreground) !important; }
+.bg-custom-accent { background-color: var(--accent) !important; }
+.bg-custom-accent-foreground { background-color: var(--accent-foreground) !important; }
+.bg-custom-destructive { background-color: var(--destructive) !important; }
+.bg-custom-destructive-foreground { background-color: var(--destructive-foreground) !important; }
+.bg-custom-input { background-color: var(--input) !important; }
+.bg-custom-input-background { background-color: var(--input-background) !important; }
+.bg-custom-switch { background-color: var(--switch-background) !important; }
+.bg-custom-sidebar { background-color: var(--sidebar) !important; }
+.bg-custom-sidebar-foreground { background-color: var(--sidebar-foreground) !important; }
+.bg-custom-sidebar-primary { background-color: var(--sidebar-primary) !important; }
+.bg-custom-sidebar-primary-foreground { background-color: var(--sidebar-primary-foreground) !important; }
+.bg-custom-sidebar-accent { background-color: var(--sidebar-accent) !important; }
+.bg-custom-sidebar-accent-foreground { background-color: var(--sidebar-accent-foreground) !important; }
+
+/* ====================================
+   CLASES DE TEXTO (COLOR)
+   ==================================== */
+.text-custom-background { color: var(--background) !important; }
+.text-custom-foreground { color: var(--foreground) !important; }
+.text-custom-card { color: var(--card) !important; }
+.text-custom-card-foreground { color: var(--card-foreground) !important; }
+.text-custom-popover { color: var(--popover) !important; }
+.text-custom-popover-foreground { color: var(--popover-foreground) !important; }
+.text-custom-primary { color: var(--primary) !important; }
+.text-custom-primary-foreground { color: var(--primary-foreground) !important; }
+.text-custom-secondary { color: var(--secondary) !important; }
+.text-custom-secondary-foreground { color: var(--secondary-foreground) !important; }
+.text-custom-muted { color: var(--muted) !important; }
+.text-custom-muted-foreground { color: var(--muted-foreground) !important; }
+.text-custom-accent { color: var(--accent) !important; }
+.text-custom-accent-foreground { color: var(--accent-foreground) !important; }
+.text-custom-destructive { color: var(--destructive) !important; }
+.text-custom-destructive-foreground { color: var(--destructive-foreground) !important; }
+.text-custom-sidebar { color: var(--sidebar) !important; }
+.text-custom-sidebar-foreground { color: var(--sidebar-foreground) !important; }
+.text-custom-sidebar-primary { color: var(--sidebar-primary) !important; }
+.text-custom-sidebar-primary-foreground { color: var(--sidebar-primary-foreground) !important; }
+.text-custom-sidebar-accent { color: var(--sidebar-accent) !important; }
+.text-custom-sidebar-accent-foreground { color: var(--sidebar-accent-foreground) !important; }
+
+/* Clases adicionales de color de texto */
+.text-custom-dark { color: var(--text-dark) !important; }
+.text-custom-primary-alt { color: var(--text-primary-alt) !important; }
+.text-custom-gray { color: var(--text-gray) !important; }
+.text-custom-white-90 { color: var(--text-white-90) !important; }
+.text-custom-white-80 { color: var(--text-white-80) !important; }
+
+/* ====================================
+   CLASES DE BORDE (BORDER)
+   ==================================== */
+.border-custom { border-color: var(--border) !important; }
+.border-custom-primary { border-color: var(--primary) !important; }
+.border-custom-secondary { border-color: var(--secondary) !important; }
+.border-custom-destructive { border-color: var(--destructive) !important; }
+.border-custom-muted { border-color: var(--muted) !important; }
+.border-custom-accent { border-color: var(--accent) !important; }
+.border-custom-sidebar { border-color: var(--sidebar-border) !important; }
+
+/* ====================================
+   CLASES DE RADIO (BORDER-RADIUS)
+   ==================================== */
+.rounded-custom { border-radius: var(--radius) !important; }
+.rounded-custom-top { 
+  border-top-left-radius: var(--radius) !important; 
+  border-top-right-radius: var(--radius) !important; 
+}
+.rounded-custom-bottom { 
+  border-bottom-left-radius: var(--radius) !important; 
+  border-bottom-right-radius: var(--radius) !important; 
+}
+.rounded-custom-start { 
+  border-top-left-radius: var(--radius) !important; 
+  border-bottom-left-radius: var(--radius) !important; 
+}
+.rounded-custom-end { 
+  border-top-right-radius: var(--radius) !important; 
+  border-bottom-right-radius: var(--radius) !important; 
+}
+
+/* ====================================
+   CLASES DE PESO DE FUENTE (FONT-WEIGHT)
+   ==================================== */
+.fw-custom-bold { font-weight: 700 !important; }
+.fw-custom-semibold { font-weight: 600 !important; }
+.fw-custom-medium { font-weight: var(--font-weight-medium) !important; }
+.fw-custom-normal { font-weight: var(--font-weight-normal) !important; }
+.fw-custom-light { font-weight: 300 !important; }
+
+/* Clases de peso específicas para headings */
+h1.fw-custom-bold,
+h2.fw-custom-bold,
+h3.fw-custom-bold,
+h4.fw-custom-bold,
+h5.fw-custom-bold,
+h6.fw-custom-bold {
+  font-weight: 700 !important;
+}
+
+h1.fw-custom-medium,
+h2.fw-custom-medium,
+h3.fw-custom-medium,
+h4.fw-custom-medium,
+h5.fw-custom-medium,
+h6.fw-custom-medium {
+  font-weight: var(--font-weight-medium) !important;
+}
+
+h1.fw-custom-normal,
+h2.fw-custom-normal,
+h3.fw-custom-normal,
+h4.fw-custom-normal,
+h5.fw-custom-normal,
+h6.fw-custom-normal {
+  font-weight: var(--font-weight-normal) !important;
+}
+
+/* ====================================
+   CLASES DE OUTLINE/RING (para focus, etc.)
+   ==================================== */
+.ring-custom { outline-color: var(--ring) !important; }
+.ring-custom-sidebar { outline-color: var(--sidebar-ring) !important; }
+
+/* ====================================
+   CLASES PARA GRÁFICOS (CHARTS)
+   ==================================== */
+.bg-chart-1 { background-color: var(--chart-1) !important; }
+.bg-chart-2 { background-color: var(--chart-2) !important; }
+.bg-chart-3 { background-color: var(--chart-3) !important; }
+.bg-chart-4 { background-color: var(--chart-4) !important; }
+.bg-chart-5 { background-color: var(--chart-5) !important; }
+
+.text-chart-1 { color: var(--chart-1) !important; }
+.text-chart-2 { color: var(--chart-2) !important; }
+.text-chart-3 { color: var(--chart-3) !important; }
+.text-chart-4 { color: var(--chart-4) !important; }
+.text-chart-5 { color: var(--chart-5) !important; }
+
+/* ====================================
+   CLASES HOVER (opcional pero útil)
+   ==================================== */
+.hover-bg-custom-primary:hover { background-color: var(--primary) !important; }
+.hover-bg-custom-secondary:hover { background-color: var(--secondary) !important; }
+.hover-bg-custom-destructive:hover { background-color: var(--destructive) !important; }
+.hover-bg-custom-muted:hover { background-color: var(--muted) !important; }
+.hover-bg-custom-accent:hover { background-color: var(--accent) !important; }
+
+.hover-text-custom-primary:hover { color: var(--primary) !important; }
+.hover-text-custom-secondary:hover { color: var(--secondary) !important; }
+.hover-text-custom-destructive:hover { color: var(--destructive) !important; }
+
+/* ====================================
+   CLASES DE UTILIDAD COMBINADAS
+   ==================================== */
+.btn-custom-primary {
+  background-color: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+  border-color: var(--primary) !important;
+}
+
+.btn-custom-secondary {
+  background-color: var(--secondary) !important;
+  color: var(--secondary-foreground) !important;
+  border-color: var(--secondary) !important;
+}
+
+.btn-custom-destructive {
+  background-color: var(--destructive) !important;
+  color: var(--destructive-foreground) !important;
+  border-color: var(--destructive) !important;
+}
+
+.card-custom {
+  background-color: var(--card) !important;
+  color: var(--card-foreground) !important;
+  border-radius: var(--radius) !important;
+  border-color: var(--border) !important;
+}
+
+.input-custom {
+  background-color: var(--input-background) !important;
+  border-color: var(--border) !important;
+  border-radius: var(--radius) !important;
+}
+
+.input-custom:focus {
+  outline-color: var(--ring) !important;
+  border-color: var(--primary) !important;
+}
+
+#root{
+    width:100vw;
+    height:100vh;
+}
+
+.shadow-1{
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+body{
+    font-size: 14px !important;
+}
