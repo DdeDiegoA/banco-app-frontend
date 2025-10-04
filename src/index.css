@@ -1,0 +1,41 @@
+:root {
+    /* Colores principales */
+    --color-primary: #1e40af;
+    --color-danger: #dc2626;
+    --color-text-primary: #333333;
+    --color-text-secondary: hsl(0, 0%, 60%);
+
+    /* Colores de fondo */
+    --color-bg-card: #ffffff;
+    --color-bg-app: #fafafa;
+
+    /* Espaciados */
+    --spacing-xs: 0.rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.25rem;
+    --spacing-xl: 1.5rem;
+
+    /* Bordes y sombras */
+    --border-radius: 12px;
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* Transiciones */
+    --transition-base: all 0.2s ease;
+
+    /* Colores de botones */
+    --redirect-btn-primary: #007bff;
+    --redirect-btn-primary-light: rgba(0, 123, 255, 0.1);
+    --redirect-btn-text: #333333;
+    --redirect-btn-text-secondary: #666666;
+    --redirect-btn-border: #e0e0e0; /*Borde*/
+    --redirect-btn-bg: #ffffff;
+    --redirect-btn-hover-bg: #f8f9fa;
+    --redirect-btn-radius: 12px;
+    --redirect-btn-transition: all 0.2s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
