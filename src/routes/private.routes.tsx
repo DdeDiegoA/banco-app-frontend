@@ -1,13 +1,12 @@
 import type { RouteObject } from "react-router-dom";
+import HomePage from "../pages/HomePage/HomePage";
 
 export const privateRoutes: RouteObject[] = [
     {
-        path: "protected-example",
+        path: "home-page",
         element: (
             // todo: Create protected component as a middleware
-            <>
-                <div>Protected Example</div>
-            </>
+            <HomePage />
         ),
     },
 ];
