@@ -1,8 +1,23 @@
+import './Footer.css';
+
+/**
+* Pie de página de la aplicación bancaria.
+* Muestra información de copyright y derechos reservados.
+* 
+* Características:
+* - Año calculado automáticamente
+* - Accesibilidad con role="contentinfo"
+* - Responsive y adaptable
+*/
 export function Footer() {
+    const currentYear = new Date().getFullYear();
+
     return (
-        <footer className="bg-gray-800 text-white p-4 mt-auto">
-            <div className="container mx-auto text-center">
-                <p>© {new Date().getFullYear()} Banco App - Todos los derechos reservados</p>
+        <footer className="footer" role="contentinfo">
+            <div className="footer__container container">
+                <p className="footer__text">
+                    © {currentYear} Banco App - Todos los derechos reservados
+                </p>
             </div>
         </footer>
     );

@@ -101,7 +101,7 @@ ESTADO DE LA CUENTA
 /* ===================================
 DISEÑO RESPONSIVO CARD SUMMARY
 =================================== */
-/* Tablets y pantallas medianas */
+/* Tablets */
 @media (max-width: 768px) {
     .card-contenedor {
         padding: var(--spacing-md) var(--spacing-lg);

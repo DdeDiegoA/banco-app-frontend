@@ -1,0 +1,89 @@
+/* ========================================
+Componente Footer 
+======================================== */
+
+/* ========================================
+BASE - Footer Container
+======================================== */
+
+.footer {
+    background-color: var(--color-bg-primary);
+    border-top: 1px solid var(--color-border);
+    margin-top: auto;
+    padding: var(--spacing-lg) 0;
+}
+
+.footer__container {
+    text-align: center;
+}
+
+/* ========================================
+CONTENIDO DEL TEXTO
+======================================== */
+
+.footer__text {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ========================================
+DISEÑO RESPONSIVE
+======================================== */
+
+/* Tablets (máx. 768px) */
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--spacing-md) 0;
+    }
+
+    .footer__text {
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* Móviles (máx. 480px) */
+@media (max-width: 480px) {
+    .footer {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .footer__text {
+        font-size: 0.75rem;
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+/* ========================================
+ACCESIBILIDAD & UX
+======================================== */
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+    .footer {
+        border-top-width: 2px;
+        border-top-color: var(--color-text-primary);
+    }
+
+    .footer__text {
+        color: var(--color-text-primary);
+        font-weight: var(--font-weight-medium);
+    }
+}
+
+/* ========================================
+PRINT STYLES
+======================================== */
+
+@media print {
+    .footer {
+        border-top: 2px solid #000;
+        padding: var(--spacing-md) 0;
+    }
+
+    .footer__text {
+        color: #000;
+    }
+}
