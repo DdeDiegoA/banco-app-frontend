@@ -1,0 +1,171 @@
+/* ===================================
+CONTENEDOR PRINCIPAL DE LA TARJETA
+=================================== */
+.card-contenedor {
+    background-color: var(--color-bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    transition: var(--transition-base);
+    border: 1px solid #f0f0f0;
+    max-width: 600px;
+}
+
+.card-contenedor:hover {
+    box-shadow: var(--box-shadow-hover);
+    transform: translateY(-1px);
+}
+
+/* ===================================
+WRAPPER DE ELEMENTOS
+=================================== */
+.card-elementos {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: var(--spacing-xs);
+    align-items: center;
+}
+
+/* ===================================
+TÍTULO DE LA TARJETA
+=================================== */
+.card-titulo {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.card-titulo h3 {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: var(--color-text-primary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ===================================
+DESCRIPCIÓN - NÚMERO DE CUENTA
+=================================== */
+.card-descripcion {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.card-descripcion p {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    letter-spacing: 0.02em;
+}
+
+/* ===================================
+VALOR/SALDO - ELEMENTO DESTACADO
+=================================== */
+.card-valor {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+}
+
+.card-valor p {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+/* Variante: Valor negativo */
+.card-valor--negativo p {
+    color: var(--color-danger);
+}
+
+/* ===================================
+ESTADO DE LA CUENTA
+=================================== */
+.card-estado {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: right;
+}
+
+.card-estado span {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    font-weight: 400;
+}
+
+/* ===================================
+DISEÑO RESPONSIVO CARD SUMMARY
+=================================== */
+/* Tablets */
+@media (max-width: 768px) {
+    .card-contenedor {
+        padding: var(--spacing-md) var(--spacing-lg);
+        max-width: 100%;
+    }
+    .card-titulo h3 {
+        font-size: 0.875rem;
+    }
+    .card-descripcion p {
+        font-size: 0.75rem;
+    }
+    .card-valor p {
+        font-size: 1rem;
+    }
+    .card-estado span {
+        font-size: 0.75rem;
+    }
+}
+/* Móviles */
+@media (max-width: 480px) {
+    .card-elementos {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        gap: var(--spacing-sm);
+    }
+    .card-titulo {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .card-descripcion {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .card-valor {
+        grid-column: 1;
+        grid-row: 3;
+        text-align: left;
+    }
+    .card-estado {
+        grid-column: 1;
+        grid-row: 4;
+        text-align: left;
+    }
+}
+/* ===================================
+ACCESIBILIDAD
+=================================== */
+/* Enfoque visible para navegación por teclado */
+.card-contenedor:focus-within {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+/* Modo de alto contraste */
+@media (prefers-contrast: high) {
+    .card-contenedor {
+        border: 2px solid var(--color-text-primary);
+    }
+}
+/* Preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .card-contenedor {
+        transition: none;
+    }
+    .card-contenedor:hover {
+        transform: none;
+    }
+}

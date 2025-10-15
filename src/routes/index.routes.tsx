@@ -1,21 +1,17 @@
 import {
     createBrowserRouter,
-    Outlet,
-    type RouteObject,
+    type RouteObject
 } from "react-router-dom";
-import { publicRoutes } from "./public.routes";
+import MainLayout from "../layouts/MainLayout/MainLayout";
 import { privateRoutes } from "./private.routes";
+import { publicRoutes } from "./public.routes";
 
 const children: RouteObject[] = [...publicRoutes, ...privateRoutes];
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: (
-            <div>
-                Home <Outlet />{" "}
-            </div>
-        ),
+        element: <MainLayout />,
         children,
     },
     {
