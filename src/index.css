@@ -1,41 +1,231 @@
-:root {
-    /* Colores principales */
-    --color-primary: #1e40af;
-    --color-danger: #dc2626;
-    --color-text-primary: #333333;
-    --color-text-secondary: hsl(0, 0%, 60%);
+/* ========================================
+   Variables CSS Globales - Kairon Bank
+   ======================================== */
 
+   :root {
+    /* Colores principales */
+    --color-primary: #2563eb;
+    --color-primary-dark: #1e40af;
+    --color-primary-light: #3b82f6;
+    --color-danger: #dc2626;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    
+    /* Colores de texto */
+    --color-text-primary: #1a202c;
+    --color-text-secondary: #2d3748;
+    --color-text-tertiary: #4a5568;
+    --color-text-muted: #718096;
+    
     /* Colores de fondo */
     --color-bg-card: #ffffff;
-    --color-bg-app: #fafafa;
-
+    --color-bg-app: #f5f7fa;
+    --color-bg-secondary: #f8fafc;
+    --color-bg-tertiary: #f0f4ff;
+    
+    /* Colores de borde */
+    --color-border-light: #f0f0f0;
+    --color-border: #e2e8f0;
+    --color-border-dark: #cbd5e0;
+    
     /* Espaciados */
-    --spacing-xs: 0.rem;
+    --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 1.25rem;
     --spacing-xl: 1.5rem;
-
+    --spacing-2xl: 2rem;
+    
     /* Bordes y sombras */
     --border-radius: 12px;
-    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    --box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.1);
-
+    --border-radius-sm: 8px;
+    --border-radius-lg: 16px;
+    
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --box-shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    
     /* Transiciones */
     --transition-base: all 0.2s ease;
-
-    /* Colores de botones */
-    --redirect-btn-primary: #007bff;
-    --redirect-btn-primary-light: rgba(0, 123, 255, 0.1);
-    --redirect-btn-text: #333333;
-    --redirect-btn-text-secondary: #666666;
-    --redirect-btn-border: #e0e0e0; /*Borde*/
+    --transition-fast: all 0.15s ease;
+    --transition-slow: all 0.3s ease;
+    
+    /* Colores de botones de redirección */
+    --redirect-btn-primary: #2563eb;
+    --redirect-btn-primary-light: rgba(37, 99, 235, 0.1);
+    --redirect-btn-text: #2d3748;
+    --redirect-btn-text-secondary: #718096;
+    --redirect-btn-border: #e2e8f0;
     --redirect-btn-bg: #ffffff;
-    --redirect-btn-hover-bg: #f8f9fa;
+    --redirect-btn-hover-bg: #f8fafc;
     --redirect-btn-radius: 12px;
-    --redirect-btn-transition: all 0.2s ease;
+    --redirect-btn-transition: all 0.3s ease;
+    
+    /* Tipografía */
+    --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", 
+                        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", 
+                        "Helvetica Neue", sans-serif;
 }
 
-* {
+/* ========================================
+   Reset y Estilos Base
+   ======================================== */
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-app);
+    min-height: 100vh;
+}
+
+/* ========================================
+   Elementos Base
+   ======================================== */
+
+/* Enlaces */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+a:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Botones */
+button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Inputs y formularios */
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* ========================================
+   Scrollbar Personalizado (WebKit)
+   ======================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-border-dark);
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+}
+
+/* ========================================
+   Utilidades Globales
+   ======================================== */
+
+/* Ocultar visualmente pero mantener accesibilidad */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Contenedor con max-width centrado */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ========================================
+   Animaciones
+   ======================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   Modo Reducido de Movimiento
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }

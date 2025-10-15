@@ -4,7 +4,6 @@
     border: 2px solid var(--redirect-btn-border);
     cursor: pointer;
     outline: none;
-
     /* Layout y espaciado */
     display: flex;
     flex-direction: column;
@@ -14,11 +13,9 @@
     padding: 24px 20px;
     min-width: 140px;
     min-height: 140px;
-
     /* Diseño visual */
     border-radius: var(--redirect-btn-radius);
     transition: var(--redirect-btn-transition);
-
     /* Tipografía */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -39,8 +36,8 @@
 }
 
 /**
-   * Estado activo/seleccionado del botón
-   * Diferencia visualmente el botón cuando está activo
+* Estado activo/seleccionado del botón
+* Diferencia visualmente el botón cuando está activo
 */
 .button--active {
     background: var(--redirect-btn-primary-light);
@@ -49,8 +46,8 @@
 }
 
 /**
-   * Estado activo con hover
-   * Mantiene la distinción visual incluso en hover
+* Estado activo con hover
+* Mantiene la distinción visual incluso en hover
 */
 .button--active:hover {
     background: var(--redirect-btn-primary-light);
@@ -59,8 +56,8 @@
 }
 
 /**
-   * Estado focus-visible para accesibilidad con teclado
-   * Solo se muestra cuando se navega con teclado, no con mouse
+* Estado focus-visible para accesibilidad con teclado
+* Solo se muestra cuando se navega con teclado, no con mouse
 */
 .button:focus-visible {
     outline: 3px solid var(--redirect-btn-primary);
@@ -68,16 +65,16 @@
 }
 
 /**
-   * Estado activo (pressed) del botón
-   * Feedback visual al hacer click
+* Estado activo (pressed) del botón
+* Feedback visual al hacer click
 */
 .button:active {
     transform: translateY(0);
 }
 
 /**
-   * Contenedor del ícono
-   * Centraliza y dimensiona el ícono correctamente
+* Contenedor del ícono
+* Centraliza y dimensiona el ícono correctamente
 */
 .button__icon {
     display: flex;
@@ -90,9 +87,9 @@
 }
 
 /**
- * Imágenes SVG dentro del contenedor de ícono
- * Asegura dimensiones consistentes y centrado perfecto
- */
+* Imágenes SVG dentro del contenedor de ícono
+* Asegura dimensiones consistentes y centrado perfecto
+*/
 .button__icon img {
     width: 100%;
     height: 100%;
@@ -101,16 +98,16 @@
 }
 
 /**
-   * Ícono dentro de botón activo
-   * Mantiene el color azul cuando está seleccionado
+* Ícono dentro de botón activo
+* Mantiene el color azul cuando está seleccionado
 */
 .button--active .button__icon {
     color: var(--redirect-btn-primary);
 }
 
 /**
-   * Ícono SVG interno
-   * Asegura dimensiones consistentes
+* Ícono SVG interno
+* Asegura dimensiones consistentes
 */
 .button__icon svg {
     width: 100%;
@@ -118,9 +115,9 @@
 }
 
 /**
- * Contenedor para grupo de botones de redirección
- * Organiza múltiples RedirectButtons en layout horizontal
- */
+* Contenedor para grupo de botones de redirección
+* Organiza múltiples RedirectButtons en layout horizontal
+*/
 .buttonGroup {
     display: flex;
     gap: 16px;
@@ -130,8 +127,8 @@
 }
 
 /**
-   * Etiqueta de texto del botón
-   * Define la tipografía y apariencia del label
+* Etiqueta de texto del botón
+* Define la tipografía y apariencia del label
 */
 .button__label {
     font-size: 16px;
@@ -143,19 +140,15 @@
 }
 
 /**
-   * Label en estado activo
-   * Resalta el texto cuando el botón está seleccionado
+* Label en estado activo
+* Resalta el texto cuando el botón está seleccionado
 */
 .button--active .button__label {
     color: var(--redirect-btn-primary);
     font-weight: 600;
 }
 
-/* ===================================
-DISEÑO RESPONSIVE: Tablets y dispositivos medianos
-Ajusta tamaños para pantallas intermedias
-=================================== */
-
+/* Tablets */
 @media (max-width: 768px) {
     .button {
         min-width: 120px;
@@ -169,52 +162,89 @@ Ajusta tamaños para pantallas intermedias
         height: 40px;
     }
 
-    /*Adapta el grupo de botones en móviles*/
-    @media (max-width: 768px) {
-        .buttonGroup {
-            gap: 12px;
-            padding: 16px 0;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .buttonGroup {
-            gap: 10px;
-            padding: 12px 0;
-            justify-content: center;
-        }
-    }
-
     .button__label {
         font-size: 15px;
     }
+
+    /* Adapta el grupo de botones en tablets */
+    .buttonGroup {
+        gap: 12px;
+        padding: 16px 0;
+    }
 }
 
-/**
-   * DISEÑO RESPONSIVE: Móviles
-   * Optimiza el componente para pantallas pequeñas
-*/
+/* Moviles*/
 @media (max-width: 480px) {
     .button {
         min-width: 100px;
-        min-height: 100px;
-        padding: 16px 12px;
-        gap: 8px;
+        min-height: 85px;
+        padding: 10px 6px;
+        gap: 6px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
+    /* Ícono reducido y proporcional */
     .button__icon {
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+    }
+
+    .button__icon img {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
     }
 
     .button__label {
-        font-size: 14px;
+        font-size: 12px;
+        font-weight: 500;
+        text-align: center;
+        line-height: 1.2;
+        word-break: break-word;
+    }
+
+    /* Grupo de botones - 3 columnas horizontales */
+    .buttonGroup {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 12px 0;
+    }
+}
+
+/* FIX adicional para pantallas muy pequeñas (iPhone SE, etc) */
+@media (max-width: 360px) {
+    .button {
+        min-height: 80px;
+        padding: 8px 4px;
+        gap: 4px;
+    }
+
+    .button__icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .button__icon img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .button__label {
+        font-size: 11px;
+    }
+
+    .buttonGroup {
+        gap: 6px;
     }
 }
 
 /**
-   * Estado disabled (opcional para uso futuro)
-   * Desactiva visualmente el botón
+* Estado disabled (opcional para uso futuro)
+* Desactiva visualmente el botón
 */
 .button:disabled {
     opacity: 0.5;
@@ -223,14 +253,17 @@ Ajusta tamaños para pantallas intermedias
 }
 
 /**
-   * Modo reducido de movimiento (accesibilidad)
-   * Respeta las preferencias del usuario
+* Modo reducido de movimiento (accesibilidad)
+* Respeta las preferencias del usuario
 */
 @media (prefers-reduced-motion: reduce) {
-
     .button,
     .button__icon,
     .button__label {
         transition: none;
+    }
+
+    .button:hover {
+        transform: none;
     }
 }
