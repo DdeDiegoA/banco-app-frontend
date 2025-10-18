@@ -1,0 +1,49 @@
+/* transaction-option-card.css (BEM .tx-card) */
+.tx-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: var(--color-white);
+    border-radius: var(--radius-card);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+    align-items: flex-start;
+}
+.tx-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.tx-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.tx-card__icon-bg {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--color-gray-100);
+}
+.tx-card__content {
+    width: 100%;
+    text-align: left;
+}
+.tx-card__title {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-lg);
+}
+.tx-card__desc {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    margin-top: -4px;
+}

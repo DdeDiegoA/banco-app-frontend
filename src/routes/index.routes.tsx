@@ -5,6 +5,10 @@ import {
 } from "react-router-dom";
 import { publicRoutes } from "./public.routes";
 import { privateRoutes } from "./private.routes";
+import { LoginPage } from "../pages/LoginPage/LoginPage";
+import { PublicOnlyRoute } from "../components/PublicOnlyRoute/PublicOnlyRoute";
+import GlobalSpinner from "../components/GlobalSpinner/GlobalSpinner";
+import GlobalAlert from "../components/GlobalAlert/GlobalAlert";
 
 const children: RouteObject[] = [...publicRoutes, ...privateRoutes];
 
@@ -13,10 +17,20 @@ export const router = createBrowserRouter([
         path: "/",
         element: (
             <div>
-                Home <Outlet />{" "}
+                <GlobalSpinner />
+                <GlobalAlert />
+                <Outlet />
             </div>
         ),
         children,
+    },
+    {
+        path: "/login",
+        element: (
+            <PublicOnlyRoute>
+                <LoginPage />
+            </PublicOnlyRoute>
+        ),
     },
     {
         path: "*",

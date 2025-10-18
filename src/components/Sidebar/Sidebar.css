@@ -1,0 +1,240 @@
+/* sidebar.css - versión corregida para ocultar textos en colapso */
+
+/* Base */
+.sidebar {
+    background: var(--color-white);
+    position: relative;
+    transition: width var(--transition-base), transform var(--transition-base);
+    width: var(--sidebar-width, 260px);
+    min-height: 100dvh;
+    overflow: visible; /* permitimos sombras fuera del contenedor */
+}
+
+/* Estado colapsado (solo cuando no está el drawer móvil abierto) */
+.sidebar.collapsed:not(.mobile-open) {
+    width: var(--sidebar-collapsed, 72px);
+}
+
+/* Top area */
+.sidebar .sidebar-top {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.75rem 0.5rem;
+}
+
+/* Brand */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    border-radius: var(--radius-card);
+}
+.brand-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-avatar);
+    background: var(--color-primary-dark);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-bold);
+}
+
+/* Texto de la marca: ocultable en colapsado */
+.brand-text {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    transition: opacity var(--transition-fast),
+        visibility var(--transition-fast), width var(--transition-base);
+    white-space: nowrap;
+}
+
+/* Profile */
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.35rem 0.65rem;
+}
+.profile-info {
+    line-height: 1;
+    transition: opacity var(--transition-fast),
+        visibility var(--transition-fast), width var(--transition-base);
+    white-space: nowrap;
+    overflow: hidden;
+}
+.profile-name {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+.profile-sub {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+.profile-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-avatar);
+    background: var(--color-primary-medium);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Nav */
+.sidebar-nav {
+    margin-top: 0.6rem;
+    padding: 0.5rem;
+}
+.sidebar-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Nav item base */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    padding: 0.6rem 0.85rem;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-semibold);
+    transition: background var(--transition-fast),
+        transform var(--transition-fast), padding var(--transition-fast);
+    justify-content: flex-start;
+    text-decoration: none;
+}
+.nav-item:hover {
+    background: var(--color-gray-100);
+}
+
+.nav-item .nav-icon {
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary-dark);
+    flex: 0 0 28px;
+}
+
+/* Label dentro del nav: control de visibilidad y transición */
+.nav-item .nav-label {
+    transition: opacity var(--transition-fast),
+        visibility var(--transition-fast), transform var(--transition-fast),
+        width var(--transition-base);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Estado activo */
+.nav-item.active {
+    background: linear-gradient(
+        90deg,
+        rgba(0, 77, 153, 0.06),
+        rgba(0, 77, 153, 0.03)
+    );
+    box-shadow: var(--shadow-xs);
+}
+
+/* CONTROLES (pie) */
+.sidebar-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.65rem;
+    margin-top: auto;
+}
+.icon-button {
+    background: var(--color-white);
+    border: 1px solid rgba(33, 37, 41, 0.04);
+    padding: 0.5rem;
+    border-radius: var(--radius-button);
+    cursor: pointer;
+    transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+/* ===== Reglas específicas cuando está colapsado =====
+     usamos :not(.mobile-open) para evitar que el drawer móvil quede sin etiquetas
+  */
+.sidebar.collapsed:not(.mobile-open) .brand-text,
+.sidebar.collapsed:not(.mobile-open) .profile-info,
+.sidebar.collapsed:not(.mobile-open) .nav-item .nav-label {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    width: 0; /* colapsa el ancho del label (evita overflow) */
+    transform: translateX(-6px);
+}
+
+/* Ajuste de layout de los items cuando está colapsado: centrar iconos y ajustar padding */
+.sidebar.collapsed:not(.mobile-open) .nav-item {
+    justify-content: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* Evitar que el gap empuje el icono: eliminar gap para centrar */
+.sidebar.collapsed:not(.mobile-open) .nav-item .nav-icon {
+    margin-right: 0;
+}
+
+/* Ajustes para el área de perfil en colapsado */
+.sidebar.collapsed:not(.mobile-open) .profile {
+    justify-content: center;
+    gap: 0.5rem;
+}
+.sidebar.collapsed:not(.mobile-open) .profile-avatar {
+    margin: 0 auto;
+}
+
+/* Mantener label visible en pantallas grandes si no quieres colapsar visualmente:
+     (opcional) */
+/* .sidebar.collapsed .brand-text { display:none; } */
+
+/* mobile sliding behavior (no cambios en lógica) */
+@media (max-width: 680px) {
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 50;
+        transform: translateX(-120%);
+        width: var(--sidebar-width, 260px);
+        background: var(--color-white);
+        padding-top: calc(var(--container-padding) + 1rem);
+        box-shadow: var(--shadow-lg);
+    }
+    .sidebar.mobile-open {
+        transform: translateX(0);
+    }
+    .mobile-toggle {
+        display: inline-block;
+    }
+    /* En móvil mostramos los textos dentro del drawer aunque el sidebar tenga la clase .collapsed */
+    .sidebar.collapsed.mobile-open .brand-text,
+    .sidebar.collapsed.mobile-open .profile-info,
+    .sidebar.collapsed.mobile-open .nav-item .nav-label {
+        opacity: 1;
+        visibility: visible;
+        width: auto;
+        pointer-events: auto;
+        transform: none;
+    }
+}

@@ -1,0 +1,39 @@
+/* logout-button.css (BEM .logout) */
+
+.logout__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    width: 100%;
+    justify-content: center;
+    border: 1.6px solid var(--color-danger);
+    background: transparent;
+    color: var(--color-danger);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: background var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.logout__btn:hover {
+    background: rgba(231, 76, 60, 0.04);
+    transform: translateY(-2px);
+}
+
+.logout__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-danger);
+}
+
+.logout__label {
+    font-size: var(--font-size-base);
+}
+
+/* make logout control constrained on wide right column */
+.profile-actions__logout {
+    margin-top: 1rem;
+}

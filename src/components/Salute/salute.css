@@ -1,0 +1,45 @@
+.salute {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.25rem 0;
+}
+.salute__left {
+}
+.salute__greeting {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+}
+.salute__greeting-strong {
+    color: var(--color-primary-medium);
+}
+.salute__sub {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.salute__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.salute__btn {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 0.35rem;
+}
+.salute__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-avatar);
+    background: var(--color-primary-dark);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-semibold);
+}

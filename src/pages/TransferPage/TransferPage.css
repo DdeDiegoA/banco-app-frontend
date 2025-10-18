@@ -1,0 +1,78 @@
+/* transfer-page.css
+   Header con título centrado y botón 'back' a la izquierda.
+*/
+.transfer-page {
+    padding: var(--container-padding);
+    background: var(--color-gray-50);
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: var(--font-family-primary);
+    color: var(--color-text-primary);
+}
+
+/* Header - título centrado, back absoluto a la izquierda */
+.transfer-page__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 0.25rem;
+    padding-bottom: 0;
+}
+
+.transfer-page__back {
+    position: absolute;
+    left: var(--container-padding);
+    top: 0.25rem;
+    text-decoration: none;
+    color: var(--color-primary-dark);
+    font-size: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    transition: background var(--transition-fast),
+        transform var(--transition-fast);
+}
+.transfer-page__back:hover {
+    background: rgba(0, 0, 0, 0.03);
+    transform: translateX(-2px);
+}
+.transfer-page__title {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-normal);
+}
+
+/* Main - contiene el form */
+.transfer-page__main {
+    margin-top: var(--spacing-2xl);
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 980px) {
+    /* centrar contenido en pantallas anchas */
+    .transfer-page__main {
+        max-width: 980px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* pequeño ajuste para pantallas muy pequeñas */
+@media (max-width: 420px) {
+    .transfer-page__back {
+        left: 12px;
+        width: 36px;
+        height: 36px;
+    }
+    .transfer-page__title {
+        font-size: var(--font-size-lg);
+    }
+}

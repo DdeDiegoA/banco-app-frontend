@@ -1,0 +1,92 @@
+/* settings-card.css (BEM .settings-card) */
+
+.settings-card {
+    background: var(--color-white);
+    border-radius: var(--radius-card);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 0.85rem;
+    box-shadow: var(--shadow-card);
+}
+
+.settings-card__title {
+    margin: 0 0 0.6rem 0;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.settings-card__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.settings-card__item {
+    padding: 0.6rem;
+    border-radius: var(--radius-lg);
+    transition: background var(--transition-fast);
+}
+
+.settings-card__item-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.settings-card__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+.settings-card__item-title {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+}
+.settings-card__item-sub {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.settings-card__control {
+    display: flex;
+    align-items: center;
+}
+
+/* link style item */
+.settings-card__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.6rem;
+    border-radius: var(--radius-lg);
+    transition: background var(--transition-fast);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+.settings-card__link:hover {
+    background: var(--color-gray-100);
+}
+
+.settings-card__chev {
+    color: var(--color-gray-600);
+}
+
+/* compact mode (for right column quick actions) */
+.settings-card--compact {
+    padding: 0.5rem;
+}
+.settings-card--compact .settings-card__item {
+    padding: 0.5rem;
+}
+
+/* small screens */
+@media (max-width: 420px) {
+    .settings-card__title {
+        font-size: var(--font-size-sm);
+    }
+}

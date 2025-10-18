@@ -1,0 +1,39 @@
+/* transactions-page.css (BEM .transactions-page) */
+.transactions-page {
+    padding: var(--container-padding);
+    background: var(--color-gray-50);
+    min-height: 100vh;
+    color: var(--color-text-primary);
+    font-family: var(--font-family-primary);
+}
+.transactions-page__header {
+    margin-bottom: var(--spacing-lg);
+}
+.transactions-page__title {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+}
+.transactions-page__subtitle {
+    margin: 6px 0 0 0;
+    color: var(--color-text-secondary);
+}
+
+.transactions-page__main {
+}
+.transactions-page__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+@media (max-width: 1000px) {
+    .transactions-page__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 680px) {
+    .transactions-page__grid {
+        grid-template-columns: 1fr;
+    }
+}

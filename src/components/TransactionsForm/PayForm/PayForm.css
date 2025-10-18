@@ -1,0 +1,49 @@
+/* transaction-forms.css
+   Layout del formulario: ancho máximo, filas, columnas, acciones (botón)
+*/
+.tx-form {
+    max-width: 760px; /* igual al diseño */
+    margin: 0 auto; /* centrado */
+    padding-top: 0.5rem;
+    padding-bottom: 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tx-form__row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+}
+
+/* columna flexible */
+.tx-form__col {
+    flex: 1;
+    min-width: 0;
+}
+
+/* acciones: botón centrado y ancho completo en el form */
+.tx-form__actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* asegurar estilo uniforme en inputs/selects (overrides locales) */
+.tx-form .input,
+.tx-form .select__native {
+    border-radius: 12px;
+    padding: 0.95rem 1rem;
+    font-size: var(--font-size-base);
+}
+
+/* en móvil apilar */
+@media (max-width: 680px) {
+    .tx-form {
+        padding: 0 1rem 2rem;
+    }
+    .tx-form__row {
+        flex-direction: column;
+    }
+}

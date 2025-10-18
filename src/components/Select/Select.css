@@ -1,0 +1,31 @@
+.select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    flex: 1;
+}
+.select__native {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 0.65rem 1.1rem 0.65rem 0.85rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: var(--color-white);
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    cursor: pointer;
+}
+.select__native:focus {
+    outline: 3px solid rgba(0, 77, 153, 0.08);
+}
+
+.select__chevron {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--color-text-secondary);
+}

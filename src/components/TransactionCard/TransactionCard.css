@@ -1,0 +1,90 @@
+/* transaction-card.css - BEM: .transaction-card */
+.transaction-card {
+    background: var(--color-white);
+    padding: 0.9rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-xs);
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    align-items: center;
+    min-height: 96px;
+}
+.transaction-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+.transaction-card__title {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+.transaction-card__account {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+.transaction-card__date {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.transaction-card__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+    min-width: 120px;
+}
+.transaction-card__amount {
+    font-weight: var(--font-weight-semibold);
+}
+.transaction-card__amount--positive {
+    color: var(--color-success);
+}
+.transaction-card__amount--negative {
+    color: var(--color-danger);
+}
+
+.transaction-card__status {
+    font-size: var(--font-size-sm);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.transaction-card__status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    display: inline-block;
+}
+.transaction-card__status--success .transaction-card__status-dot {
+    background: var(--color-success);
+}
+.transaction-card__status--warning .transaction-card__status-dot {
+    background: var(--color-warning);
+}
+.transaction-card__status--danger .transaction-card__status-dot {
+    background: var(--color-danger);
+}
+.transaction-card__status--success {
+    color: var(--color-success);
+}
+.transaction-card__status--warning {
+    color: var(--color-warning);
+}
+.transaction-card__status--danger {
+    color: var(--color-danger);
+}
+
+/* Responsive: allow stacking on small screens */
+@media (max-width: 680px) {
+    .transaction-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .transaction-card__meta {
+        align-items: flex-start;
+        width: 100%;
+    }
+}

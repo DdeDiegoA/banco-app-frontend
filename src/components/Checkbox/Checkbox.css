@@ -1,0 +1,81 @@
+/* Checkbox Component - BEM Methodology */
+
+.checkbox {
+    display: inline-flex;
+    align-items: center;
+}
+
+.checkbox__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.checkbox__label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox__box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+
+    border: 2px solid var(--color-gray-400);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-white);
+
+    transition: all var(--transition-base);
+}
+
+.checkbox__icon {
+    width: 14px;
+    height: 14px;
+    color: var(--color-white);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all var(--transition-fast);
+}
+
+.checkbox__text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-tight);
+}
+
+/* States */
+.checkbox__input:checked + .checkbox__label .checkbox__box {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+}
+
+.checkbox__input:checked + .checkbox__label .checkbox__icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.checkbox__input:focus + .checkbox__label .checkbox__box {
+    outline: 2px solid var(--color-primary-dark);
+    outline-offset: 2px;
+}
+
+.checkbox__label:hover .checkbox__box {
+    border-color: var(--color-primary-dark);
+}
+
+.checkbox__input:disabled + .checkbox__label {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.checkbox__input:disabled + .checkbox__label .checkbox__box {
+    background-color: var(--color-gray-100);
+}

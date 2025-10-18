@@ -1,0 +1,52 @@
+/* LoginForm Component - BEM Methodology */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    width: 100%;
+}
+
+.login-form__field {
+    width: 100%;
+}
+
+.login-form__options {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.login-form__forgot-link {
+    align-self: center;
+    padding: var(--spacing-sm);
+
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary-dark);
+    text-decoration: none;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    transition: opacity var(--transition-base);
+}
+
+.login-form__forgot-link:hover:not(:disabled) {
+    opacity: var(--link-hover-opacity);
+    text-decoration: underline;
+}
+
+.login-form__forgot-link:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .login-form {
+        gap: var(--spacing-md);
+    }
+}

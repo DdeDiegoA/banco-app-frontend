@@ -1,0 +1,58 @@
+/* Asegura el formulario centrado y con buen espacio */
+.recharge-form {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Si quieres añadir una clase wrapper al form, puedes usar .recharge-form.
+     Por ahora los select/input están cubiertos por transaction-forms.css e Input.css */
+
+/* placeholder visual ligero para el campo de teléfono */
+.recharge-form input[type="tel"],
+.recharge-form input[type="text"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* input tipo número: esconder los flechitas en chrome / firefox */
+.recharge-form input[type="number"]::-webkit-outer-spin-button,
+.recharge-form input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.recharge-form input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* mayor separación entre label y control en móviles */
+@media (max-width: 680px) {
+    .tx-form__row {
+        margin-bottom: 0.85rem;
+    }
+    .tx-form__actions {
+        margin-top: 1rem;
+    }
+}
+
+/* mejora de contraste para errores específicos a recargas */
+.recharge-form .input--error {
+    border-color: var(--color-danger);
+    box-shadow: 0 6px 18px rgba(231, 76, 60, 0.06);
+}
+
+/* Si quieres restringir el ancho del botón a 760px igual que el form */
+.recharge-form .tx-form__actions .button--full-width {
+    max-width: 760px;
+    width: 100%;
+    height: 48px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* pequeño helper para el label del teléfono */
+.recharge-form .input-field__label {
+    font-weight: var(--font-weight-medium);
+}

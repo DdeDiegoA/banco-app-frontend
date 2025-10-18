@@ -1,0 +1,46 @@
+/* account-card.css - BEM: .account-card */
+.account-card {
+    background: var(--color-white);
+    padding: 1rem;
+    border-radius: var(--radius-card);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.account-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.account-card__title {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-weight: var(--font-weight-medium);
+}
+.account-card__balance {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-medium);
+}
+.account-card__balance--negative {
+    color: var(--color-danger);
+}
+
+.account-card__body {
+    margin-top: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.account-card__number {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+.account-card__meta {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
