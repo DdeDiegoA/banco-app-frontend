@@ -5,6 +5,7 @@
     background: var(--color-gray-50);
     font-family: var(--font-family-primary);
     color: var(--color-text-primary);
+    box-sizing: border-box;
 }
 
 .movements-page__header {
@@ -30,15 +31,37 @@
     gap: 1rem;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
+    /* ligero padding para separar visualmente */
+    padding: 0.5rem;
+    background: transparent;
+    border-radius: var(--radius-md);
 }
 
-/* left controls container */
+/* left controls container (selects) */
 .movements-page__controls {
     display: flex;
     flex-direction: row;
     gap: 0.75rem;
     align-items: center;
     flex: 1;
+    min-width: 0; /* para permitir que hijos reduzcan en mobile */
+}
+
+/* force selects to be flexible and touch-friendly */
+.movements-page__controls .select {
+    min-width: 140px;
+    max-width: 320px;
+    flex: 0 1 auto;
+}
+
+/* en desktop, SummaryCards al lado derecho */
+.movements-page__summary {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    min-width: 220px;
 }
 
 /* labels for selects */
@@ -48,14 +71,7 @@
     margin-right: 0.25rem;
 }
 
-/* SummaryCards container (placed to the right on wide screens) */
-@media (min-width: 980px) {
-    .movements-page__filters {
-        justify-content: space-between;
-    }
-}
-
-/* History list */
+/* History list header */
 .movements-page__history-header {
     margin-bottom: 0.5rem;
 }
@@ -64,6 +80,8 @@
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-semibold);
 }
+
+/* list grid defaults: 3 columns desktop */
 .movements-page__list {
     list-style: none;
     margin: 0;
@@ -73,18 +91,104 @@
     gap: 1rem;
 }
 
-/* responsive */
+/* responsive breakpoints */
 @media (max-width: 1200px) {
     .movements-page__list {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* tablet -> stack filters when narrow */
+@media (max-width: 980px) {
+    .movements-page__filters {
+        gap: 0.75rem;
+        align-items: stretch;
+    }
+    .movements-page__controls .select {
+        min-width: 120px;
+        max-width: 100%;
+        flex: 1 1 auto;
+    }
+    .movements-page__summary {
+        min-width: 200px;
+    }
+}
+
+/* mobile - stack controls, selects full width, summary under controls */
 @media (max-width: 680px) {
+    .movements-page {
+        padding: calc(var(--container-padding) / 1.5);
+    }
+
+    .movements-page__title {
+        font-size: var(--font-size-xl);
+    }
+
+    .movements-page__filters {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-sm);
+        padding: 0.5rem 0;
+    }
+
+    /* controles apilados */
+    .movements-page__controls {
+        flex-direction: column;
+        gap: 0.6rem;
+        width: 100%;
+    }
+
+    /* cada select ocupa 100% */
+    .movements-page__controls .select {
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    /* SummaryCards pasa debajo y centrado */
+    .movements-page__summary {
+        width: 100%;
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+
+    /* más espacio alrededor de las tarjetas de resumen en móvil */
+    .movements-page__summary .summary-card {
+        flex: 1 1 48%;
+    }
+
+    /* history list -> 1 columna, cards full width */
     .movements-page__list {
         grid-template-columns: 1fr;
     }
-    .movements-page__controls {
-        width: 100%;
-        gap: 0.5rem;
+
+    /* spacing más grande entre items para touch */
+    .movements-page__list > li {
+        padding: 0;
     }
+
+    /* mejorar legibilidad en items (ajustar dentro del TransactionCard si es necesario) */
+    .transaction-card,
+    .transaction-card * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* small polish: ensure selects and buttons have good tap size */
+.select .select__native,
+.input,
+.button {
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+    font-size: var(--font-size-base);
+}
+
+/* utility: center when empty */
+.movements-page__empty {
+    padding: var(--spacing-md);
+    text-align: center;
+    color: var(--color-text-secondary);
 }
